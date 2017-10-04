@@ -41,21 +41,41 @@ func insertionSort(_ array: [Int]) -> [Int] {
 
 ### Bubble sort
 ```swift
-func bubbleSort() {
-    var x, y, z, passes, key : Int
-    //track collection iterations
-    for x in 0..<numberList.count {
-        passes = (numberList.count - 1) - x;
-        //use shorthand "half-open" range operator
-        for y in 0..<passes {
-            key = numberList[y]
-            //compare and rank values
-            if (key > numberList[y + 1]) {
-                z = numberList[y + 1]
-                numberList[y + 1] = key
-                numberList[y] = z
-            }
-        } //end for
-    } //end for
-} //end function
+var array = [5,3,4,6,8,2,9,1,7,10,11]
+var sortedArray = NSMutableArray(array: array)
+var sortedAboveIndex = array.count
+var swaps = 0
+var somethingSwapped = false
+		
+repeat {
+    somethingSwapped = false
+    for i in 1..<array.count {
+        if  (sortedArray[i - 1] as! Int) > (sortedArray[i] as! Int) {
+        sortedArray.exchangeObject(at: i, withObjectAt: i-1)
+        somethingSwapped = true
+        swaps += 1
+        }
+    }
+} while (somethingSwapped)
+```
+
+### Bubble sort Optimized
+```swift
+var array = [5,3,4,6,8,2,9,1,7,10,11]
+var sortedArray = NSMutableArray(array: array)
+var sortedAboveIndex = array.count
+var swaps = 0
+
+repeat {
+    var lastSwapIndex = 0
+  
+    for i in 1..<sortedAboveIndex {
+        if  (sortedArray[i - 1] as! Int) > (sortedArray[i] as! Int) {
+            sortedArray.exchangeObject(at: i, withObjectAt: i-1)
+            lastSwapIndex = i
+            swaps += 1
+        }
+    }
+    sortedAboveIndex = lastSwapIndex
+} while (sortedAboveIndex != 0)
 ```
