@@ -59,7 +59,7 @@ repeat {
 } while (somethingSwapped)
 ```
 
-### Bubble sort Optimized
+### Optimized Bubble sort 
 ```swift
 var array = [5,3,4,6,8,2,9,1,7,10,11]
 var sortedArray = NSMutableArray(array: array)
