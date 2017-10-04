@@ -42,6 +42,8 @@ func insertionSort(_ array: [Int]) -> [Int] {
 }
 ```
 
+And also consider this algorithm, Bubble sort
+
 ### Bubble sort
 ```swift
 var array = [5,3,4,6,8,2,9,1,7,10,11]
