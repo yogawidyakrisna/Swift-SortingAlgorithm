@@ -1,4 +1,7 @@
 # Swift Sorting Algorithm
+The concern here is about Invariant. In computer science, invariants represent assumptions that remain unchanged
+throughout execution. To see how this works, consider the algorithm, insertion sort.
+
 ### Insertion Sort
 ```swift
 //insertion sort - rank items by comparing each key in the list.
@@ -24,7 +27,7 @@ func insertionSort() {
 } //end function
 ```
 
-### Optimized Insertion Sort
+### Optimized Insertion Sort using invariant
 ```swift
 func insertionSort(_ array: [Int]) -> [Int] {
     var a = array			 // 1
@@ -59,7 +62,7 @@ repeat {
 } while (somethingSwapped)
 ```
 
-### Optimized Bubble sort 
+### Optimized Bubble sort using invariant
 ```swift
 var array = [5,3,4,6,8,2,9,1,7,10,11]
 var sortedArray = NSMutableArray(array: array)
